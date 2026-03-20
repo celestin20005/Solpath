@@ -1,0 +1,13 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --violet: #7C3AED;
+  --cyan: #06B6D4;
+  --gold: #F59E0B;
+  --dark: #0F0F1A;
+  --light: #F8FAFC;
+}
+body { font-family: Arial, sans-serif; background-color: var(--light); color: #1e1e2e; min-height: 100vh; }
+a { text-decoration: none; color: inherit; }
+button:hover { opacity: 0.88; transition: opacity 0.2s; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: var(--violet); border-radius: 3px; }
