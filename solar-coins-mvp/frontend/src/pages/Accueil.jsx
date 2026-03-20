@@ -78,7 +78,7 @@ export default function Accueil() {
           <span style={{ color:'#333' }}>·</span>
           <Link to="/confidentialite" style={{ color:'#475569', fontSize:'0.78rem' }}>Confidentialité</Link>
           <span style={{ color:'#333' }}>·</span>
-          <span style={{ color:'#475569', fontSize:'0.78rem' }}>© 2025 NEXCID</span>
+          <span style={{ color:'#475569', fontSize:'0.78rem' }}>© 2026 NEXCID</span>
         </div>
       </div>
     </div>
