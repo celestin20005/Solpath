@@ -39,7 +39,7 @@ export default function Connexion() {
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom:'1rem' }}>
             <label style={labelStyle}>Email</label>
-            <input name="email" type="email" placeholder="dao@email.com" value={form.email} onChange={handleChange} style={inputStyle} required />
+            <input name="email" type="email" placeholder="@email.com" value={form.email} onChange={handleChange} style={inputStyle} required />
           </div>
           <div style={{ marginBottom:'1rem' }}>
             <label style={labelStyle}>Mot de passe</label>

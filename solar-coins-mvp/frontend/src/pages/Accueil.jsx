@@ -70,9 +70,7 @@ export default function Accueil() {
           <span style={{ color:'#444' }}> · </span>
           <span style={{ color:'#06B6D4' }}>SOLPATH</span>
         </div>
-        <p style={{ color:'#F59E0B', fontStyle:'italic', fontSize:'0.85rem', marginBottom:'0.5rem' }}>
-          "I tile bɛ baara kɛ i ye"
-        </p>
+       
         <div style={{ display:'flex', gap:'1rem', justifyContent:'center', marginTop:'0.5rem' }}>
           <Link to="/cgu" style={{ color:'#475569', fontSize:'0.78rem' }}>CGU</Link>
           <span style={{ color:'#333' }}>·</span>
