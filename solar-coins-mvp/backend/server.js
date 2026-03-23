@@ -15,7 +15,8 @@ app.use('/api/productions',   require('./routes/productions'));
 app.use('/api/wallet',        require('./routes/wallet'));
 app.use('/api/produits',      require('./routes/produits'));
 app.use('/api/admin',         require('./routes/admin'));
-
+app.use('/api/techniciens', require('./routes/techniciens'));
+app.use('/api/missions',    require('./routes/missions'));
 // Route test
 app.get('/', (req, res) => {
   res.json({

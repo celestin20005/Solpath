@@ -41,4 +41,19 @@ export const getAdminUsers = () => API.get('/admin/users');
 export const getProductionsEnAttente = () => API.get('/admin/productions/en-attente');
 export const validerProduction = (id) => API.put(`/productions/${id}/valider`);
 
+// Missions
+export const creerMission = (data) => API.post('/missions', data);
+export const getMesMissions = () => API.get('/missions/mes');
+export const getMissionsDisponibles = () => API.get('/missions/disponibles');
+export const accepterMission = (id) => API.put(`/missions/${id}/accepter`);
+export const creerDevis = (missionId, data) => API.post(`/missions/${missionId}/devis`, data);
+export const accepterDevis = (devisId) => API.put(`/missions/devis/${devisId}/accepter`);
+export const validerTravaux = (missionId) => API.put(`/missions/${missionId}/valider-travaux`);
+
+// Techniciens
+export const getTechniciens = (params) => API.get('/techniciens', { params });
+export const creerProfilTechnicien = (data) => API.post('/techniciens', data);
+export const updateDisponibilite = (data) => API.put('/techniciens/disponibilite', data);
+export const validerInstallationTech = (id, data) => API.put(`/techniciens/valider-installation/${id}`, data);
+
 export default API;

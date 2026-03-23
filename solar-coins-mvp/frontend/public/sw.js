@@ -17,14 +17,21 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  // Ignorer les requêtes non GET et les appels API
+  if (event.request.method !== 'GET') return;
   if (event.request.url.includes('/api/')) return;
+
   event.respondWith(
     fetch(event.request)
       .then(res => {
         const clone = res.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+        caches.open(CACHE_NAME).then(cache => {
+          cache.put(event.request, clone);
+        });
         return res;
       })
-      .catch(() => caches.match(event.request).then(cached => cached || caches.match('/index.html')))
+      .catch(() => caches.match(event.request)
+        .then(cached => cached || caches.match('/index.html'))
+      )
   );
 });

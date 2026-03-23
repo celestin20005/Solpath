@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getStats, getMesInstallations } from '../api';
 import { useAuth } from '../context/AuthContext';
 import StatCard from '../components/StatCard';
+import JaugeEnergie from '../components/JaugeEnergie';
 
 export default function Dashboard() {
   const { user } = useAuth();
@@ -36,31 +37,45 @@ export default function Dashboard() {
           <StatCard icone="📅" valeur={stats.nb_mois_saisis || 0} label="Mois déclarés" couleur="#10B981" />
         </div>
       )}
+      <div style={{ display:'flex', justifyContent:'center', margin:'2rem 0' }}> <JaugeEnergie /> </div>
 
-      {/* Actions rapides */}
-      <div style={{ marginBottom:'2rem' }}>
-        <h2 style={{ color:'#0F0F1A', marginBottom:'1rem', paddingBottom:'0.5rem', borderBottom:'2px solid #7C3AED' }}>
-          Actions rapides
-        </h2>
-        <div style={{ display:'flex', gap:'1rem', flexWrap:'wrap' }}>
-          {(user?.role === 'client' || user?.role === 'admin') && (
-            <Link to="/productions/nouvelle" style={btnStyle('#7C3AED')}>
-              ⚡ Saisir ma production
-            </Link>
-          )}
-          <Link to="/wallet" style={btnStyle('#06B6D4')}>
-            🪙 Mon wallet
-          </Link>
-          <Link to="/catalogue" style={btnStyle('#0F0F1A')}>
-            🛒 Catalogue
-          </Link>
-          {(user?.role === 'client' || user?.role === 'admin') && (
-            <Link to="/installations/nouvelle" style={btnStyle('#F59E0B')}>
-              ➕ Nouvelle installation
-            </Link>
-          )}
-        </div>
-      </div>
+      {/* Jauge + Actions rapides */}
+<div style={{ display:'flex', gap:'2rem', flexWrap:'wrap', alignItems:'flex-start', marginBottom:'2rem' }}>
+
+  {/* Jauge énergie */}
+  <JaugeEnergie />
+
+  {/* Actions rapides */}
+  <div style={{ flex:1, minWidth:'200px' }}>
+    <h2 style={{ color:'#0F0F1A', marginBottom:'1rem', paddingBottom:'0.5rem', borderBottom:'2px solid #7C3AED' }}>
+      Actions rapides
+    </h2>
+    <div style={{ display:'flex', flexDirection:'column', gap:'0.8rem' }}>
+      {(user?.role === 'client' || user?.role === 'admin') && (
+        <Link to="/productions/nouvelle" style={btnStyle('#7C3AED')}>
+          ⚡ Saisir ma production
+        </Link>
+      )}
+      <Link to="/wallet" style={btnStyle('#06B6D4')}>
+        🪙 Mon wallet
+      </Link>
+      <Link to="/catalogue" style={btnStyle('#0F0F1A')}>
+        🛒 Catalogue
+      </Link>
+      {(user?.role === 'client' || user?.role === 'admin') && (
+        <Link to="/installations/nouvelle" style={btnStyle('#F59E0B')}>
+          ➕ Nouvelle installation
+        </Link>
+      )}
+      <Link to="/demander-mission" style={btnStyle('#EF4444')}>
+        🔧 Demander une intervention
+      </Link>
+      <Link to="/techniciens" style={btnStyle('#10B981')}>
+        👷 Trouver un technicien
+      </Link>
+    </div>
+  </div>
+</div>
 
       {/* Mes installations */}
       {installations.length > 0 && (

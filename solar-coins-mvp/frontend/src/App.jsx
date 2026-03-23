@@ -18,6 +18,8 @@ import MonCatalogue from './pages/MonCatalogue';
 import AdminDashboard from './pages/AdminDashboard';
 import CGU from './pages/CGU';
 import Confidentialite from './pages/Confidentialite';
+import DemanderMission from './pages/DemanderMission';
+import ListeTechniciens from './pages/ListeTechniciens';
 
 export default function App() {
   return (
@@ -39,6 +41,20 @@ export default function App() {
           <Route path="/mon-catalogue" element={<ProtectedRoute roles={['fournisseur','admin']}><MonCatalogue /></ProtectedRoute>} />
           <Route path="/admin" element={<ProtectedRoute roles={['admin']}><AdminDashboard /></ProtectedRoute>} />
           <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/demander-mission"
+  element={
+    <ProtectedRoute>
+      <DemanderMission />
+    </ProtectedRoute>
+  }
+/>
+<Route path="/techniciens"
+  element={
+    <ProtectedRoute>
+      <ListeTechniciens />
+    </ProtectedRoute>
+  }
+/>
         </Routes>
         <CookieBanner />
         <InstallPWA />
