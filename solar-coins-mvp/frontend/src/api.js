@@ -58,3 +58,19 @@ export const updateDisponibilite = (data) => API.put('/techniciens/disponibilite
 export const validerInstallationTech = (id, data) => API.put(`/techniciens/valider-installation/${id}`, data);
 
 export default API;
+
+// Commandes
+export const passerCommande = (data) =>
+  API.post('/commandes', data);
+export const getMesCommandes = () =>
+  API.get('/commandes/mes');
+export const getCommandesRecues = () =>
+  API.get('/commandes/recues');
+export const updateStatutCommande = (id, statut) =>
+  API.put(`/commandes/${id}/statut`, { statut });
+
+// Notifications
+export const getMesNotifications = () =>
+  API.get('/commandes/notifications');
+export const marquerNotificationsLues = () =>
+  API.put('/commandes/notifications/lues');

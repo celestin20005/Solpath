@@ -12,3 +12,27 @@ a { text-decoration: none; color: inherit; }
 button:hover { opacity: 0.88; transition: opacity 0.2s; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-thumb { background: var(--violet); border-radius: 3px; }
+/* Responsive mobile */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+nav {
+  flex-wrap: wrap;
+  height: auto !important;
+  padding: 0.5rem 1rem !important;
+  gap: 0.5rem;
+}
+
+nav a, nav button, nav span {
+  font-size: 0.78rem !important;
+}
+
+@media (max-width: 600px) {
+  div[style*="maxWidth: '1100px'"],
+  div[style*="maxWidth: '1000px'"],
+  div[style*="maxWidth: '900px'"] {
+    padding: 1rem !important;
+  }
+}
