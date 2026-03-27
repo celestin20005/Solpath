@@ -25,6 +25,8 @@ app.use('/api/admin',         require('./routes/admin'));
 app.use('/api/techniciens', require('./routes/techniciens'));
 app.use('/api/missions',    require('./routes/missions'));
 app.use('/api/commandes', require('./routes/commandes'));
+app.use('/api/messages', require('./routes/messages'));
+
 // Route test
 app.get('/', (req, res) => {
   res.json({

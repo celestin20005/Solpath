@@ -55,6 +55,8 @@ export default function App() {
     </ProtectedRoute>
   }
 />
+<Route path="/messages" element={<ProtectedRoute><Messagerie /></ProtectedRoute>} />
+<Route path="/messages/:contactId" element={<ProtectedRoute><Messagerie /></ProtectedRoute>} />
         </Routes>
         <CookieBanner />
         <InstallPWA />

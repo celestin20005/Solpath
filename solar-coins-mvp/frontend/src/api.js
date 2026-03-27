@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Messagerie from './pages/Messagerie';
 
 
 const API = axios.create({
@@ -74,3 +75,14 @@ export const getMesNotifications = () =>
   API.get('/commandes/notifications');
 export const marquerNotificationsLues = () =>
   API.put('/commandes/notifications/lues');
+
+// Messages
+export const envoyerMessage = (data) =>
+  API.post('/messages', data);
+export const getConversations = () =>
+  API.get('/messages/conversations');
+export const getConversation = (contactId) =>
+  API.get(`/messages/${contactId}`);
+export const getNonLus = () =>
+  API.get('/messages/non-lus/count');
+
