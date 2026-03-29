@@ -18,6 +18,7 @@ API.interceptors.request.use((config) => {
 export const inscription = (data) => API.post('/auth/inscription', data);
 export const connexion = (data) => API.post('/auth/connexion', data);
 export const getProfil = () => API.get('/auth/profil');
+export const updateProfil = (data) => API.put('/auth/profil', data);
 
 // Installations
 export const creerInstallation = (data) => API.post('/installations', data);
@@ -33,8 +34,8 @@ export const getHistorique = () => API.get('/wallet/historique');
 export const getStats = () => API.get('/wallet/stats');
 
 // Produits
-export const getCatalogue = (params) => API.get('/produits', { params });
 export const ajouterProduit = (data) => API.post('/produits', data);
+export const getProduits = (params) => API.get('/produits', { params });
 export const modifierProduit = (id, data) => API.put(`/produits/${id}`, data);
 
 // Admin

@@ -25,9 +25,10 @@ export function AuthProvider({ children }) {
   };
 
   const logout = () => {
-    localStorage.removeItem('solpath_token');
-    setUser(null);
-  };
+  localStorage.removeItem('token');
+  localStorage.removeItem('user');
+  setUser(null);
+};
 
   return (
     <AuthContext.Provider value={{ user, login, logout, loading }}>

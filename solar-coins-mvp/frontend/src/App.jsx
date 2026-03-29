@@ -20,6 +20,11 @@ import CGU from './pages/CGU';
 import Confidentialite from './pages/Confidentialite';
 import DemanderMission from './pages/DemanderMission';
 import ListeTechniciens from './pages/ListeTechniciens';
+import Messagerie from './pages/Messagerie';
+import MonProfil from './pages/MonProfil';
+import MesMissions from './pages/MesMissions';
+export const ajouterProduit = (data) => API.post('/produits', data);
+export const getProduits = (params) => API.get('/produits', { params });
 
 export default function App() {
   return (
@@ -57,6 +62,18 @@ export default function App() {
 />
 <Route path="/messages" element={<ProtectedRoute><Messagerie /></ProtectedRoute>} />
 <Route path="/messages/:contactId" element={<ProtectedRoute><Messagerie /></ProtectedRoute>} />
+<Route path="/mes-produits"
+  element={<ProtectedRoute><MesProduits /></ProtectedRoute>}
+/>
+<Route path="/produit/nouveau"
+  element={<ProtectedRoute><NouveauProduit /></ProtectedRoute>}
+/>
+<Route path="/mon-profil"
+  element={<ProtectedRoute><MonProfil /></ProtectedRoute>}
+/>
+<Route path="/missions/disponibles"
+  element={<ProtectedRoute><MesMissions /></ProtectedRoute>}
+/>
         </Routes>
         <CookieBanner />
         <InstallPWA />

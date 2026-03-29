@@ -46,6 +46,7 @@ export default function NavBar() {
             <Link to="/mes-produits" style={s.lien}>Mes Produits</Link>
             <Link to="/catalogue" style={s.lien}>Catalogue</Link>
             <Link to="/messages" style={s.lien}>💬 Messages</Link>
+            <Link to="/mon-profil" style={s.lien}>👤 Mon Profil</Link>
           </>
         )}
 
@@ -55,6 +56,7 @@ export default function NavBar() {
             <Link to="/missions/disponibles" style={s.lien}>Missions</Link>
             <Link to="/mon-profil-tech" style={s.lien}>Mon Profil</Link>
             <Link to="/messages" style={s.lien}>💬 Messages</Link>
+            <Link to="/mon-profil" style={s.lien}>👤 Mon Profil</Link>
           </>
         )}
 
@@ -66,6 +68,7 @@ export default function NavBar() {
             <Link to="/admin/installations" style={s.lien}>Installations</Link>
             <Link to="/catalogue" style={s.lien}>Catalogue</Link>
             <Link to="/messages" style={s.lien}>💬 Messages</Link>
+            <Link to="/mon-profil" style={s.lien}>👤 Mon Profil</Link>
           </>
         )}
 

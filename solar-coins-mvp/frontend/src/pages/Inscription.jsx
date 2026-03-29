@@ -50,14 +50,19 @@ export default function Inscription() {
               <input name={f.name} type={f.type} placeholder={f.placeholder} value={form[f.name]} onChange={handleChange} style={inputStyle} required={f.name !== 'telephone'} />
             </div>
           ))}
-          <div style={{ marginBottom:'1rem' }}>
-            <label style={labelStyle}>Je suis un</label>
-            <select name="role" value={form.role} onChange={handleChange} style={inputStyle}>
-              <option value="client">Client — j'ai des panneaux solaires</option>
-              <option value="agent">Agent terrain Solar Coins</option>
-              <option value="fournisseur">Fournisseur de matériel solaire</option>
-            </select>
-          </div>
+          <div style={s.champ}>
+  <label style={s.label}>Je suis</label>
+  <select
+    name="role"
+    value={form.role}
+    onChange={handleChange}
+    style={s.input}
+  >
+    <option value="client">👤 Client — j'ai des panneaux solaires</option>
+    <option value="fournisseur">🏪 Fournisseur — je vends du matériel</option>
+    <option value="agent">🔧 Technicien — j'installe et répare</option>
+  </select>
+</div>
           <div style={{ marginBottom:'1rem', display:'flex', alignItems:'flex-start', gap:'0.5rem' }}>
             <input type="checkbox" id="cgu" checked={cguAcceptees} onChange={e => setCguAcceptees(e.target.checked)} style={{ marginTop:'3px', cursor:'pointer', accentColor:'#7C3AED' }} />
             <label htmlFor="cgu" style={{ fontSize:'0.85rem', color:'#555', cursor:'pointer', lineHeight:1.5 }}>

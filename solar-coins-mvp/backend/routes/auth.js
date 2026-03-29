@@ -104,3 +104,27 @@ router.get('/profil', verifierToken, async (req, res) => {
 });
 
 module.exports = router;
+// METTRE À JOUR LE PROFIL
+router.put('/profil', verifierToken, async (req, res) => {
+  const { nom, telephone, ville, bio } = req.body;
+  try {
+    const result = await pool.query(
+      `UPDATE users SET
+         nom = COALESCE($1, nom),
+         telephone = COALESCE($2, telephone),
+         ville = COALESCE($3, ville),
+         bio = COALESCE($4, bio)
+       WHERE id = $5
+       RETURNING id, nom, email, telephone, role, ville, bio`,
+      [nom || null, telephone || null,
+       ville || null, bio || null, req.user.id]
+    );
+    res.json({
+      message: '✅ Profil mis à jour',
+      user: result.rows[0]
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ erreur: 'Erreur serveur' });
+  }
+});
